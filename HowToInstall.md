@@ -1,5 +1,5 @@
 # How To Install Kinect V2 Driver in Ubuntu
-It is still being edited.(編集中)\\
+It is still being edited.(編集中)  
 This page contains the install instructions for setting up KinectV2 with Ubuntu 15.04 Operating Systems.
 
 ##参考
@@ -55,7 +55,7 @@ catkin_make -DCMAKE_BUILD_TYPE="Release"
 
 ##root権限にしなくても実行できるようにする
 
-" 90-kinect2.rules "という名前のファイルを、" /etc/udev/rules.d/ "の中に作成。そのファイルの中に
+" 90-kinect2.rules "という名前のファイルを、" /etc/udev/rules.d/ "の中に作成。  そのファイルの中に
 ```
 # ATTR{product}=="Kinect2"
 SUBSYSTEM=="usb", ATTR{idVendor}=="045e", ATTR{idProduct}=="02c4", MODE="0666"

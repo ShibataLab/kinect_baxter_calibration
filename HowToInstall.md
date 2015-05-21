@@ -1,5 +1,5 @@
 # How To Install Kinect V2 Driver in Ubuntu
-
+It is still being edited.(編集中)
 This page contains the install instructions for setting up KinectV2 with Ubuntu 15.04 Operating Systems.
 
 ##参考

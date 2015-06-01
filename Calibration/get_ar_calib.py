@@ -31,7 +31,7 @@ def getMatrixFromPose(pose):
 
 def getTfFromMatrix(matrix):
     scale, shear, angles, trans, persp = tf.transformations.decompose_matrix(matrix)
-    return trans, tf.transformations.quaternion_from_euler(*angles)
+    return trans, tf.transformations.quaternion_from_euler(*angles),angles
 
 def lookupTransform(tf_listener, target, source):
     tf_listener.waitForTransform(target, source, rospy.Time(), rospy.Duration(4.0))
@@ -89,7 +89,7 @@ while not rospy.is_shutdown():
     # Compose transforms
     # base to marker = forearm to marker * base to forearm
     base_marker = reference_marker.dot(base_reference)
-    trans, rot = getTfFromMatrix(numpy.linalg.inv(base_marker))
+    trans, rot, rot_euler = getTfFromMatrix(numpy.linalg.inv(base_marker))
     tf_broadcaster.sendTransform(trans, rot, rospy.Time.now(), '/ar_marker_'+str(markernum), '/base')
     marker_pose = getPoseFromMatrix(base_marker)
 
@@ -117,13 +117,16 @@ while not rospy.is_shutdown():
 print "Writing transform to yaml file"
 # Write to yaml file
 f = open("base_camera_tf.yaml", 'w')
-lines = ['trans: [', 'rot: [']
+lines = ['trans: [', 'rot: [', 'rot_euler: [']
 for elem in trans:
     lines[0] += str(elem) + ', '
 lines[0] += ']\n'
 for elem in rot:
     lines[1] += str(elem) + ', '
 lines[1] += ']\n'
+for elem in rot_euler:
+    lines[2] += str(elem) + ', '
+lines[2] += ']\n'
 lines.append('parent: /base\n')
 lines.append('child: /kinect2_link\n')
 f.writelines(lines)

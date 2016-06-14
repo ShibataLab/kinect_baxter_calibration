@@ -1,5 +1,11 @@
 #!/usr/bin/env python
 
+# get_ar_calib.py: python code to get calibration between kinect and baxter
+# Author: Nishanth Koganti
+# Date: 2016/6/14
+
+# Source: https://github.com/osrf/baxter_demos/blob/master/scripts/get_ar_calib.py
+
 import tf
 import yaml
 import numpy

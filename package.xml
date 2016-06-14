@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<package>
+  <name>kinect_baxter_calibration</name>
+  <version>0.0.0</version>
+  <description>This package contains code to calibrate Kinect depth sensor with Baxter research robot.</description>
+
+  <maintainer email="buntyke@gmail.com">Nishanth Koganti</maintainer>
+
+  <license>MIT</license>
+
+  <url type="website">https://github.com/ShibataLabPrivate/kinect_baxter_calibration.git</url>
+
+  <author email="buntyke@gmail.com">Nishanth Koganti</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>urdf</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rosbag</build_depend>
+  <build_depend>rostime</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>robot_state_publisher</build_depend>
+
+  <run_depend>urdf</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rosbag</run_depend>
+  <run_depend>rostime</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>geometry_msgs</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <export></export>
+
+</package>

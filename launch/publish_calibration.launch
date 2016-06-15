@@ -1,0 +1,19 @@
+<!--
+publish_calibration.launch: ROS Launch file to publish calibration matrix between kinect and baxter.
+Requirements: no requirements needed
+Author: Nishanth Koganti
+Date: 2016/6/15
+-->
+
+<launch>
+    <!-- define args -->
+    <arg name="parameters_file"  default="$(find kinect_baxter_calibration)/files/kinect_calibration.yaml" />
+
+    <!-- image to screen publisher -->
+    <node pkg="baxter_examples" type="xdisplay_image.py" name="xdisplay_image" args="-f $(find baxter_tools)/share/images/researchsdk.png"/>
+
+    <!-- calibration using marker_calibration.py-->
+    <node pkg="kinect_baxter_calibration" type="publish_calibration.py" name="publish_calibration" output="screen">
+        <param name="parameters_file" value="$(arg parameters_file)" />
+    </node>
+</launch>

@@ -1,0 +1,16 @@
+<!--
+compute_calibration.launch: ROS Launch file to compute absolute orientation calibration
+Requirements: no requirements needed
+Author: Nishanth Koganti
+Date: 2016/6/16
+-->
+
+<launch>
+    <!-- define args -->
+    <arg name="files_path"  default="$(find kinect_baxter_calibration)/files/" />
+
+    <!-- calibration using compute_calibration.py-->
+    <node pkg="kinect_baxter_calibration" type="compute_calibration.py" name="compute_calibration">
+        <param name="files_path" value="$(arg files_path)" />
+    </node>
+</launch>

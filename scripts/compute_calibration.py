@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# marker_calibration.py: Code to compute absolute orientation from collected points
+# compute_calibration.py: Code to compute absolute orientation from collected points
 # Author: Nishanth Koganti
 # Date: 2016/06/16
 # Source: http://math.stackexchange.com/questions/745234/calculate-rotation-translation-matrix-to-match-measurement-points-to-nominal-poi
@@ -72,7 +72,7 @@ def absOrientation(x,y):
 
 def main():
     # initialize ros node
-    rospy.init_node('marker_calibration')
+    rospy.init_node('compute_calibration')
 
     # get path to folder containing recorded data
     filesPath = rospy.get_param('~files_path')

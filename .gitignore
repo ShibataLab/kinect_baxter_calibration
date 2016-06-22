@@ -1,1 +1,4 @@
 .ipynb_checkpoints
+files/kinect_trajectory
+files/baxter_trajectory
+files/kinect_calibration.yaml
